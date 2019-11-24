@@ -1,0 +1,9 @@
+sudo: required
+services:
+    - docker
+    
+before_install:
+    - docker build -t AndreyMaltsev/docker-react01 -f Dockerfile.dev .    
+    
+script:
+    - docker run AndreyMaltsev/docker-react01 npm run test -- --coverage   
